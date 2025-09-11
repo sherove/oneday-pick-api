@@ -1,0 +1,11 @@
+server:
+  port=8010
+
+spring:
+  datasource:
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    url: jdbc:sqlserver://localhost:1433;DatabaseName=insa;encrypt=false;trustServerCertificate=false;
+    username: test-insa
+    password: C{GdpX#A
+  jpa:
+    show-sql: true
