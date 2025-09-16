@@ -39,7 +39,9 @@ dependencies {
 
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 
-	runtimeOnly("com.microsoft.sqlserver:mssql-jdbc:12.6.1.jre11") // ✅ Java 17에서도 jre11 버전 사용
+//	runtimeOnly("com.microsoft.sqlserver:mssql-jdbc:12.6.1.jre11") // ✅ MsSQl : Java 17에서도 jre11 버전 사용
+	implementation("com.mysql:mysql-connector-j")	// ✅ MySQl
+
 
 }
 

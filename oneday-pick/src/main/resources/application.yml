@@ -1,11 +1,13 @@
 server:
-  port=8010
+  port: 8010
 
 spring:
   datasource:
-    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
-    url: jdbc:sqlserver://localhost:1433;DatabaseName=insa;encrypt=false;trustServerCertificate=false;
-    username: test-insa
-    password: C{GdpX#A
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/oneday?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+    username: root
+    password: root
   jpa:
+    hibernate:
+      ddl-auto: update   # create, create-drop, update, validate 중 선택
     show-sql: true

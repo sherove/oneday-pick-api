@@ -1,0 +1,24 @@
+version: "3.8"
+services:
+  mysql:                # MySQL 컨테이너 정의
+    image: mysql:8.0
+    container_name: oneday-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: oneday
+      TZ: Asia/Seoul
+    ports:
+      - "3306:3306"
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  app:                  # Spring Boot 컨테이너 정의
+    build: .            # 현재 폴더의 Dockerfile 이용해서 빌드
+    ports:
+      - "8010:8010"
+    depends_on:
+      - mysql           # mysql 먼저 실행 후 app 실행
+
+volumes:
+  mysql_data:
